@@ -1,19 +1,14 @@
-import React from 'react';
-import {Container} from "react-bootstrap";
-import {SplitView} from "@ashxjs/split-view";
-import LeftComponent from "../components/leftComponent";
-import RightComponent from "../components/rightComponent";
+import React, { useEffect } from "react";
+import askGpt, { askGpt2 } from "../services/chatgptService";
 
 const Dashboard = () => {
-    return (
-        <Container fluid className='vh-100'>
-            <SplitView
-                left={LeftComponent}
-                right={RightComponent}
-                defaultLeftPanelWidth={"33vw"}
-            />
-        </Container>
-    );
+  // askGpt2().then((res) => {console.log(res)});
+
+  useEffect(() => {
+    console.log(askGpt("hello"));
+  }, []);
+
+  return <div></div>;
 };
 
 export default Dashboard;
