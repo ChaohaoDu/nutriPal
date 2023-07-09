@@ -1,8 +1,14 @@
 import Dashboard from "./screens/dashboard";
+import {AuthProvider} from "./context/authContext";
+import {DishesProvider} from "./context/dishesContext";
 
 function App() {
     return (
-        <Dashboard/>
+        <AuthProvider>
+            <DishesProvider>
+                <Dashboard/>
+            </DishesProvider>
+        </AuthProvider>
     );
 }
 
