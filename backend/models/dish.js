@@ -11,8 +11,8 @@ const dishSchema = new Schema({
   },
   calories: { type: Number, required: true },
   carbs: { type: Number, required: true },
-  proteins: { type: Number, required: true },
-  fats: { type: Number, required: true },
+  protein: { type: Number, required: true },
+  fat: { type: Number, required: true },
 });
 
 export default model("Dish", dishSchema);
