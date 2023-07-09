@@ -66,7 +66,3 @@ export default async function askGpt(content) {
 
   return chatCompletion.data.choices[0].message;
 }
-
-export async function askGpt2() {
-  return await openai.listEngines();
-}
