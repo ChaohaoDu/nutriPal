@@ -29,6 +29,9 @@ const NutritionLabel = () => {
         setProtein(totalProtein);
     }, [dishes, dateSelected, mealSelected]);
 
+    const formatNumber = (num) => {
+        return Number.isInteger(num) ? num.toString() : num.toFixed(2);
+    }
 
     return (
         <div className="nutrition-label">
@@ -40,19 +43,19 @@ const NutritionLabel = () => {
             <div className="nutrition-info">
                 <div className="nutrition-row">
                     <span className="label">Calories:</span>
-                    <span className="value">{calories}</span>
+                    <span className="value">{formatNumber(calories)}</span>
                 </div>
                 <div className="nutrition-row">
                     <span className="label">Fat:</span>
-                    <span className="value">{fat}g</span>
+                    <span className="value">{formatNumber(fat)}g</span>
                 </div>
                 <div className="nutrition-row">
                     <span className="label">Carbs:</span>
-                    <span className="value">{carbs}g</span>
+                    <span className="value">{formatNumber(carbs)}g</span>
                 </div>
                 <div className="nutrition-row">
                     <span className="label">Protein:</span>
-                    <span className="value">{protein}g</span>
+                    <span className="value">{formatNumber(protein)}g</span>
                 </div>
             </div>
         </div>

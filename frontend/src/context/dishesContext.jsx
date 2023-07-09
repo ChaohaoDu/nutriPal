@@ -5,7 +5,7 @@ export const DishesContext = createContext();
 
 export const DishesProvider = ({children}) => {
     const [dishes, setDishes] = useState([]);
-    const [dateSelected, setDateSelected] = useState(new Date());
+    const [dateSelected, setDateSelected] = useState(new Date().toISOString());
     const [mealSelected, setMealSelected] = useState(MEAL_CATEGORY.WHOLE_DAY);
 
     return (

@@ -8,11 +8,11 @@ const openai = new OpenAIApi(configuration);
 export default async function askGpt(content) {
   const prompt = `Respond to requests sent to a nutritionist, wrapped in !!!, in JSON format that will be interpreted by an application code to execute the actions. These requests should be categorized into 6 groups:
 
-  - "dishName": the name of the dish the user had (required properties in the response JSON)
+  - "name": the name of the dish the user had (required properties in the response JSON)
   - "protein": the approximate protein intake (required properties in the response JSON)
   - "carbs": the approximate carbs intake (required properties in the response JSON)
   - "fat": the approximate fat intake (required properties in the response JSON)
-  - "kcal": the approximate kcal intake (required properties in the response JSON)
+  - "calories": the approximate calories intake (required properties in the response JSON)
   
   Details about the response JSON:
   
@@ -33,26 +33,26 @@ export default async function askGpt(content) {
   Output:
   [
       {
-          "dishName": "番茄炒蛋",
+          "name": "番茄炒蛋",
           "protein": 15,
           "carbs": 10,
           "fat": 8,
-          "kcal": 180
+          "calories": 180
       },
       {
-          "dishName": "西兰花牛肉",
+          "name": "西兰花牛肉",
           "protein": 25,
           "carbs": 12,
           "fat": 10,
-          "kcal": 250
+          "calories": 250
       },
       {
-          "dishName": "土耳其大米饭",
+          "name": "土耳其大米饭",
           "quantity": 150,
           "protein": 15,
           "carbs": 10,
           "fat": 8,
-          "kcal": 180
+          "calories": 180
       }
   ]
   

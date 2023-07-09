@@ -1,27 +1,16 @@
 import React, {useState} from 'react';
 
-const MealEntry = ({mealName, grams, onDelete, onEdit}) => {
+const MealEntry = ({dish, onDelete, onEdit}) => {
     const [isEditing, setIsEditing] = useState(false);
-    const [editedMeal, setEditedMeal] = useState(mealName);
-    const [editedGrams, setEditedGrams] = useState(grams);
-
-    const handleDelete = () => {
-        onDelete();
-    };
+    const [editedMeal, setEditedMeal] = useState(dish.name);
 
     const handleEdit = () => {
         setIsEditing(true);
     };
 
-    const handleSave = () => {
-        onEdit(editedMeal, editedGrams);
-        setIsEditing(false);
-    };
 
     const handleCancel = () => {
         setIsEditing(false);
-        setEditedMeal(mealName);
-        setEditedGrams(grams);
     };
 
     const handleMealChange = (e) => {
@@ -29,38 +18,39 @@ const MealEntry = ({mealName, grams, onDelete, onEdit}) => {
     };
 
     const handleGramsChange = (e) => {
-        setEditedGrams(e.target.value);
+        // setEditedGrams(e.target.value);
     };
 
     return (
         <div className="meal-entry">
+            <span>{dish.id}</span> {   }
             {isEditing ? (
                 <input
                     type="text"
-                    value={editedMeal}
+                    value={dish.name}
                     onChange={handleMealChange}
                 />
             ) : (
-                <span>{mealName}</span>
+                <span>{dish.name}</span>
             )}
-            {isEditing ? (
-                <input
-                    type="text"
-                    value={editedGrams}
-                    onChange={handleGramsChange}
-                />
-            ) : (
-                <span>{grams}g</span>
-            )}
+            {/*{isEditing ? (*/}
+            {/*    <input*/}
+            {/*        type="text"*/}
+            {/*        value={editedGrams}*/}
+            {/*        onChange={handleGramsChange}*/}
+            {/*    />*/}
+            {/*) : (*/}
+            {/*    <span>{dish.}g</span>*/}
+            {/*)}*/}
             {isEditing ? (
                 <>
-                    <button onClick={handleSave}>Save</button>
+                    <button>Save</button>
                     <button onClick={handleCancel}>Cancel</button>
                 </>
             ) : (
                 <>
                     <button onClick={handleEdit}>Edit</button>
-                    <button onClick={handleDelete}>Delete</button>
+                    <button onClick={onDelete}>Delete</button>
                 </>
             )}
         </div>

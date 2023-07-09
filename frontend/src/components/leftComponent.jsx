@@ -9,9 +9,13 @@ import {DishesContext} from "../context/dishesContext";
 const LeftComponent = () => {
     const {dateSelected, setDateSelected} = useContext(DishesContext);
 
+    const onChange = (date) => {
+        setDateSelected(date.toISOString());
+    }
+
     return (
         <div className='vh-100 root'>
-            <Calendar onChange={setDateSelected} value={dateSelected}/>
+            <Calendar onChange={date => onChange(date)} value={dateSelected}/>
             <NutritionLabel/>
         </div>
     );
