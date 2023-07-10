@@ -24,3 +24,5 @@ const MealNav = () => {
         </ButtonGroup>
     );
 };
+
+export default MealNav;

@@ -7,7 +7,7 @@ import MealEntry from "./mealEntry";
 import ChatBox from "./chatBox";
 import askGpt from "../services/chatgptService";
 import {MEAL_CATEGORY} from "../constants/mealCategory";
-
+import MealNav from "./mealNav";
 
 const RightComponent = () => {
     const {
@@ -94,10 +94,12 @@ const RightComponent = () => {
     };
 
     return (
-        <Container className="vh-100 d-flex flex-column" style={{backgroundColor: "#ffc107"}}>
+        <Container className="vh-100 d-flex flex-column py-4" style={{backgroundColor: "#ffc107"}}>
             <Row className="flex-grow-1">
                 <Col>
-                    <MealNav/>
+                    <div className="mb-3">
+                        <MealNav/>
+                    </div>
                     {dishes.map((dish) => (
                         <MealEntry
                             key={dish._id}
