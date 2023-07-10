@@ -30,7 +30,7 @@ const NutritionLabel = () => {
     }, [dishes, dateSelected, mealSelected]);
 
     const formatNumber = (num) => {
-        return Number.isInteger(num) ? num.toString() : num.toFixed(2);
+        return Number.isInteger(num) ? num.toString() : num.toFixed(1);
     }
 
     return (
@@ -43,7 +43,7 @@ const NutritionLabel = () => {
             <div className="nutrition-info">
                 <div className="nutrition-row">
                     <span className="label">Calories:</span>
-                    <span className="value">{formatNumber(calories)}</span>
+                    <span className="value">{formatNumber(calories)}kcal</span>
                 </div>
                 <div className="nutrition-row">
                     <span className="label">Fat:</span>

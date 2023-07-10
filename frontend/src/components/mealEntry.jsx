@@ -4,52 +4,31 @@ const MealEntry = ({dish, onDelete, onEdit}) => {
     const [isEditing, setIsEditing] = useState(false);
     const [editedMeal, setEditedMeal] = useState(dish.name);
 
-    const handleEdit = () => {
-        setIsEditing(true);
-    };
-
-
-    const handleCancel = () => {
+    const handleSave = () => {
+        onEdit(dish._id, editedMeal);
         setIsEditing(false);
-    };
-
-    const handleMealChange = (e) => {
-        setEditedMeal(e.target.value);
-    };
-
-    const handleGramsChange = (e) => {
-        // setEditedGrams(e.target.value);
     };
 
     return (
         <div className="meal-entry">
-            <span>{dish.id}</span> {   }
+            <span>{dish._id}</span>
             {isEditing ? (
                 <input
                     type="text"
-                    value={dish.name}
-                    onChange={handleMealChange}
+                    value={editedMeal}
+                    onChange={(e) => setEditedMeal(e.target.value)}
                 />
             ) : (
                 <span>{dish.name}</span>
             )}
-            {/*{isEditing ? (*/}
-            {/*    <input*/}
-            {/*        type="text"*/}
-            {/*        value={editedGrams}*/}
-            {/*        onChange={handleGramsChange}*/}
-            {/*    />*/}
-            {/*) : (*/}
-            {/*    <span>{dish.}g</span>*/}
-            {/*)}*/}
             {isEditing ? (
                 <>
-                    <button>Save</button>
-                    <button onClick={handleCancel}>Cancel</button>
+                    <button onClick={handleSave}>Save</button>
+                    <button onClick={() => setIsEditing(false)}>Cancel</button>
                 </>
             ) : (
                 <>
-                    <button onClick={handleEdit}>Edit</button>
+                    <button onClick={() => setIsEditing(true)}>Edit</button>
                     <button onClick={onDelete}>Delete</button>
                 </>
             )}

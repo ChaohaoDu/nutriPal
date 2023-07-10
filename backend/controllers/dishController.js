@@ -108,6 +108,7 @@ export const dishUpdate = [
         .optional()
         .trim()
         .notEmpty()
+        .toLowerCase()
         .isIn(["whole day", "breakfast", "lunch", "dinner", "others"]),
     body("calories").optional().trim().toFloat(),
     body("carbs").optional().trim().toFloat(),
