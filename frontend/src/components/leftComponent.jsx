@@ -1,24 +1,33 @@
-import React, {useContext} from 'react';
-import 'bootstrap/dist/css/bootstrap.css';
+import React, { useContext } from "react";
+import "bootstrap/dist/css/bootstrap.css";
 import Calendar from "react-calendar";
-import 'react-calendar/dist/Calendar.css';
+import "./calendar.css";
 import NutritionLabel from "./nutritionLabel";
-import './leftComponent.css';
-import {DishesContext} from "../context/dishesContext";
+import "./leftComponent.css";
+import { DishesContext } from "../context/dishesContext";
 
 const LeftComponent = () => {
-    const {dateSelected, setDateSelected} = useContext(DishesContext);
+  const { dateSelected, setDateSelected } = useContext(DishesContext);
 
-    const onChange = (date) => {
-        setDateSelected(date.toISOString());
-    }
+  const onChange = (date) => {
+    setDateSelected(date.toISOString());
+  };
 
-    return (
-        <div className='vh-100 root'>
-            <Calendar onChange={date => onChange(date)} value={dateSelected}/>
-            <NutritionLabel/>
-        </div>
-    );
+  return (
+    <div className="vh-100 root">
+      {/* <div className="card"> */}
+        {/* <div className="card-body" style={{ margin: 0, padding: 0 }}> */}
+          <Calendar
+            className="rounded"
+            onChange={(date) => onChange(date)}
+            value={dateSelected}
+          />
+        {/* </div> */}
+      {/* </div> */}
+
+      <NutritionLabel />
+    </div>
+  );
 };
 
 export default LeftComponent;

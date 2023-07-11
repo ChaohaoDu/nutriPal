@@ -1,0 +1,14 @@
+.btn-unselected {
+    background-color: none;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    color: #949494;
+    /* padding: 10px 20px; */
+    /* text-align: center; */
+    /* text-decoration: none; */
+    /* display: inline-block; */
+    /* font-size: 16px; */
+    /* border-radius: 5px; */
+    /* margin: 4px 2px;/ */
+    cursor: pointer;
+}

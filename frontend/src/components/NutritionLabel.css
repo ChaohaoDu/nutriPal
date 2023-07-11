@@ -1,15 +1,3 @@
-.nutrition-label {
-    border: 2px solid #ccc;
-    border-radius: 4px;
-    padding: 20px;
-    width: 250px;
-    margin: 0 auto;
-}
-
-.nutrition-info {
-    margin-top: 10px;
-}
-
 .nutrition-row {
     display: flex;
     justify-content: space-between;

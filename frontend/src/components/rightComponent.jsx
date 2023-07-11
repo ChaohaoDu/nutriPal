@@ -94,12 +94,15 @@ const RightComponent = () => {
     };
 
     return (
-        <Container className="vh-100 d-flex flex-column py-4" style={{backgroundColor: "#ffc107"}}>
+        <div className="vh-100 d-flex flex-column p-4" style={{backgroundColor: "#ffffff"}}>
             <Row className="flex-grow-1">
                 <Col>
                     <div className="mb-3">
                         <MealNav/>
                     </div>
+
+                    <hr style={{height: "2px", backgroundColor: "#949494"}} />
+
                     {dishes.map((dish) => (
                         <MealEntry
                             key={dish._id}
@@ -118,7 +121,7 @@ const RightComponent = () => {
                     </Col>
                 </Row>
             )}
-        </Container>
+        </div>
     );
 };
 
