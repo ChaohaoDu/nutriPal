@@ -49,27 +49,27 @@ const NutritionLabel = () => {
   };
 
   return (
-    <div class="card">
+    <div className="card">
       <div className="card-header">
         <h2 className="d-inline me-2">{`${mealName
           .charAt(0)
           .toUpperCase()}${mealName.slice(1)}`}</h2>
         <span className="d-inline">intake</span>
       </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item nutrition-row">
+      <ul className="list-group list-group-flush">
+        <li className="list-group-item nutrition-row">
           <span className="label">Calories:</span>
           <span className="value">{formatNumber(calories)} kcal</span>
         </li>
-        <li class="list-group-item nutrition-row">
+        <li className="list-group-item nutrition-row">
           <span className="label">Fat:</span>
           <span className="value">{formatNumber(fat)} g</span>
         </li>
-        <li class="list-group-item nutrition-row">
+        <li className="list-group-item nutrition-row">
           <span className="label">Carbs:</span>
           <span className="value">{formatNumber(carbs)} g</span>
         </li>
-        <li class="list-group-item nutrition-row">
+        <li className="list-group-item nutrition-row">
           <span className="label">Protein:</span>
           <span className="value">{formatNumber(protein)} g</span>
         </li>

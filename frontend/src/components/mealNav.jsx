@@ -12,7 +12,7 @@ const MealNav = () => {
   };
 
   return (
-    <ButtonGroup>
+    <ButtonGroup className="align-item-center">
       {Object.values(MEAL_CATEGORY).map((buttonName) => (
         <button
           className={`btn rounded-pill me-2 ${

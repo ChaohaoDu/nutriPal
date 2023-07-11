@@ -28,7 +28,7 @@ const ChatBox = ({ onSubmit }) => {
           onChange={handleChange}
           placeholder="Type your message..."
         />
-        <button class="btn btn-outline-secondary" type="submit">
+        <button className="btn btn-outline-secondary" type="submit">
           Send
         </button>
       </form>
