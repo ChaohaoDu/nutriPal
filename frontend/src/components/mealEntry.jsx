@@ -18,7 +18,6 @@ const MealEntry = ({ dish, onDelete, onEdit }) => {
     } else {
       setCurrentDish(dish);
     }
-    console.log(currentDish);
   };
   const focusOnInput = () => {
     inputRef.current.focus();

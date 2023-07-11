@@ -20,7 +20,6 @@ export const createDish = async (dish) => {
 export const deleteDish = async (id) => {
     try {
         const url = `/dishes/${id}`;
-        console.log(url)
         const response = await instance.delete(url);
         return response.data;
     } catch (error) {

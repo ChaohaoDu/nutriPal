@@ -1,0 +1,10 @@
+runtime: nodejs14
+
+env_variables:
+  CONNECTION_URL: "mongodb+srv://nutripaladmin:RpuKStgya8TKQaNR@cluster0.iuggkbm.mongodb.net/?retryWrites=true&w=majority"
+
+handlers:
+- url: /.*
+  secure: always
+  redirect_http_response_code: 301
+  script: auto
