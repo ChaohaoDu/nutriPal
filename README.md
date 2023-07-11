@@ -20,9 +20,9 @@ To get started with NutriPal, follow these steps:
 1. Clone the repository to your local machine
 2. Install dependencies by running `npm install` or `yarn` in both directories
 3. In the root directory, create a .env file with the following environment variables:
-  1. frontend
-    - REACT_APP_OPENAI_API_KEY
-    - REACT_APP_BACKEND_API
-  2. backend
-    - CONNECTION_URL: the connection string to your MongoDB Altas
+   1. frontend
+       - REACT_APP_OPENAI_API_KEY
+       - REACT_APP_BACKEND_API
+   2. backend
+      - CONNECTION_URL: the connection string to your MongoDB Altas
 4. Run the application by running `npm run` or `yarn start` in the root directory
