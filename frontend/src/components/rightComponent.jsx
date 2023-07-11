@@ -17,12 +17,18 @@ import MealNav from "./mealNav";
 import {auth} from "../services/initFirebase";
 
 const RightComponent = () => {
-    const {dishes, setDishes, dateSelected, mealSelected, setMealSelected} =
+    const {dishes, setDishes, dateSelected, mealSelected, setMealSelected, setCurrentDish} =
         useContext(DishesContext);
     const {user} = useContext(AuthContext);
+
     useEffect(() => {
         setMealSelected(MEAL_CATEGORY.WHOLE_DAY);
-    }, [dateSelected, setMealSelected]);
+        setCurrentDish(null);
+    }, [dateSelected]);
+
+    useEffect(() => {
+        setCurrentDish(null);
+    }, [mealSelected])
 
     useEffect(() => {
         const findDishes = async () => {
